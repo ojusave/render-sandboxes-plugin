@@ -70,16 +70,10 @@ def main() -> None:
                 fail(f"{path} needs name and description")
 
     readme = (ROOT / "README.md").read_text()
-    for required in (
-        "utm_source=github",
-        "utm_medium=referral",
-        "utm_campaign=ojus_demos",
-        "utm_content=hero_cta",
-        "utm_content=footer_link",
-        "https://render.com/images/deploy-to-render-button.svg",
-    ):
-        if required not in readme:
-            fail(f"README is missing {required}")
+    if "https://github.com/ojusave/render-sandboxes-plugin" not in readme:
+        fail("README is missing the GitHub repository")
+    if "render.yaml" in readme or "render.com/deploy" in readme or "render.com/register" in readme:
+        fail("README includes a deploy button, signup link, or controller Blueprint")
 
     secret = re.compile(r"rnd_[A-Za-z0-9]|key_[A-Za-z0-9]{16,}")
     for path in ROOT.rglob("*"):
