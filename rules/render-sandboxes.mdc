@@ -1,0 +1,14 @@
+---
+description: Safety constraints for Render Sandboxes and the Cursor self-hosted pool.
+alwaysApply: true
+---
+
+render-sandboxes:
+
+- Render Sandboxes are early access. Each sandbox is Oregon only, at most 24 hours, 2 CPU, 4 GB memory, and 10 GB disk. A workspace can run 100 at once.
+- Use `scripts/sandbox.sh` for create, exec, copy, snapshot, inspect, and stop. Stop every sandbox you create.
+- Experiments use `--network-policy deny-all`. A Cursor worker sandbox uses `allow-all` because the worker must reach Cursor.
+- `CURSOR_API_KEY` and `RENDER_API_KEY` stay on the controller. A sandbox receives only the claim session token, written to `/run/cursor/token`.
+- The pool name is `render-sandboxes`. The pool named `default` does not clone repositories.
+- Do not print API keys, session tokens, or command output that may contain them.
+- Do not enable Blueprint preview environments for the controller. A preview would start a second controller.

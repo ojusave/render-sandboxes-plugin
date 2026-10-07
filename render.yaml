@@ -1,0 +1,29 @@
+# Controller only. Sandboxes are created at runtime and are not Blueprint resources.
+# Do not enable preview environments: a preview would start a second controller.
+services:
+  - type: worker
+    name: cursor-sandbox-controller
+    runtime: docker
+    dockerfilePath: ./controller/Dockerfile
+    dockerContext: ./controller
+    region: oregon
+    plan: starter
+    maxShutdownDelaySeconds: 120
+    autoDeployTrigger: "off"
+    envVars:
+      - key: CURSOR_API_KEY
+        sync: false
+      - key: CURSOR_RELEASE_API_KEY
+        sync: false
+      - key: RENDER_API_KEY
+        sync: false
+      - key: RENDER_WORKSPACE
+        sync: false
+      - key: WORKER_SNAPSHOT_ID
+        sync: false
+      - key: CURSOR_POOL
+        value: render-sandboxes
+      - key: CURSOR_WORKER_IDLE_RELEASE_TIMEOUT
+        value: "600"
+      - key: SANDBOX_TIMEOUT_SECONDS
+        value: "7200"

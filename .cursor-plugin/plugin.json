@@ -1,0 +1,25 @@
+{
+  "name": "render-sandboxes",
+  "displayName": "Render Sandboxes",
+  "version": "0.1.0",
+  "description": "Run Cursor Cloud Agent tool calls in Render Sandboxes. Create, execute, copy, snapshot, inspect, and clean up sandboxes from Cursor.",
+  "author": {
+    "name": "Render",
+    "email": "support@render.com"
+  },
+  "homepage": "https://render.com/docs/sandboxes",
+  "repository": "https://github.com/ojusave/render-sandboxes-plugin",
+  "license": "MIT",
+  "keywords": [
+    "render",
+    "sandboxes",
+    "cloud-agents",
+    "self-hosted",
+    "cursor"
+  ],
+  "logo": "assets/logo.svg",
+  "skills": "skills",
+  "rules": "rules",
+  "agents": "agents",
+  "commands": "commands"
+}
