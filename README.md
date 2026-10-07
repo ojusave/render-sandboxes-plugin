@@ -4,13 +4,9 @@ Run Cursor Cloud Agent tool calls in [Render Sandboxes](https://render.com/docs/
 
 This is a new Cursor Marketplace plugin. It is separate from the [Render plugin](https://github.com/render-oss/render-cursor-plugin), which deploys and monitors Render services. This plugin does not add a second MCP server. Sandbox operations go through the Render CLI so credentials stay in your Render login or environment.
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/ojusave/render-sandboxes-plugin)
-
 [Sign up on Render](https://render.com/register?utm_source=github&utm_medium=referral&utm_campaign=ojus_demos&utm_content=hero_cta)
 
 GitHub repository: [ojusave/render-sandboxes-plugin](https://github.com/ojusave/render-sandboxes-plugin)
-
-The Deploy button deploys the pool controller from this repository.
 
 ## What you can do
 
@@ -40,6 +36,10 @@ Command details are in `skills/render-sandboxes/references/operations.md`.
 
 ## Set up the pool
 
+This is the only part of the plugin that deploys a Render service. The button deploys the pool controller Background Worker. It does not install the Cursor plugin.
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/ojusave/render-sandboxes-plugin)
+
 Follow `skills/cursor-team-pool/SKILL.md`. The controller Blueprint is the root `render.yaml`. Secret values are entered in the Render Dashboard. They are not stored in this repository.
 
 ## Test
@@ -68,4 +68,4 @@ A Background Worker is the right host because it stays up and only needs outboun
 
 [Sign up on Render](https://render.com/register?utm_source=github&utm_medium=referral&utm_campaign=ojus_demos&utm_content=footer_link)
 
-[Render docs](https://render.com/docs) · [Deploy to Render button](https://render.com/docs/deploy-to-render-button)
+[Render docs](https://render.com/docs)
