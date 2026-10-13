@@ -13,13 +13,11 @@ GitHub repository: [ojusave/render-sandboxes-plugin](https://github.com/ojusave/
 
 Sandboxes are early access: Oregon only, 24 hours maximum, 2 CPU, 4 GB memory, 10 GB disk, and 100 concurrent sandboxes per workspace.
 
-## Install for local testing
+## Install locally
 
 1. Copy this directory to `~/.cursor/plugins/local/render-sandboxes`.
 2. Reload Cursor.
 3. Open Customize and confirm the `render-sandboxes` and `cursor-team-pool` skills.
-
-Marketplace submission is a public Git repository reviewed at [cursor.com/marketplace/publish](https://cursor.com/marketplace/publish).
 
 ## Use a sandbox
 
@@ -35,20 +33,6 @@ Command details are in `skills/render-sandboxes/references/operations.md`.
 ## Set up the pool
 
 Follow `skills/cursor-team-pool/SKILL.md`. The controller is `controller/Dockerfile`. Secret values are entered in the Render Dashboard. They are not stored in this repository.
-
-## Test
-
-```bash
-bash tests/run-tests.sh
-```
-
-That suite uses fake CLIs. It does not create a sandbox. To exercise a real workspace:
-
-```bash
-bash scripts/live-roundtrip.sh
-```
-
-The live script creates one sandbox, copies a file, snapshots it, and stops it.
 
 ## Controller
 
